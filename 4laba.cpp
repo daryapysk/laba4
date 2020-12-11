@@ -60,6 +60,38 @@ void pigeonholeSort(T1& arr, T2 n)
 	return;
 }
 
+template <typename T>
+void selectionSort(T* a, int n)  
+{
+	for (int i = 0; i < n - 1; i++) {
+		T min = a[i];
+		
+		int k = i;
+		for (int j = i + 1; j < n; j++) {
+			if (min > a[j]) {
+				min = a[j];
+				k = j;
+			}
+		}
+		
+		swap(a[i], a[k]);
+	}
+}
+template <typename T>
+void selectionSort(vector<T>& a, int n)
+{
+	for (int i = 0; i < n - 1; i++) {
+		T min = a[i];
+		int k = i;
+		for (int j = i + 1; j < n; j++) {
+			if (min > a[j]) {
+				min = a[j];
+				k = j;
+			}
+		}
+		swap(a[i], a[k]);
+	}
+}
 
 int main() 
 {
