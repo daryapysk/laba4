@@ -135,7 +135,7 @@ void pigeonholeSort(T1& arr, T2 n)   //A function for sorting using pigeonhole a
 	T2 range = max - min;  // Find range 
 	range++;
 
-	// Create an array of vectors. Size of array range. Each vector represents a hole that is going to contain matching elements.
+	// Create an array of vectors. Size of array range. Each vector represents a hole that is going to contain matching elements
 	vector <vector<T2>> holes;
 	vector <T2> temp;
 	temp.clear();
@@ -229,6 +229,60 @@ int main()
 	cout << endl;
 	
 	cout << "-------------------------------------" << endl;
+	
+	int B[5];
+
+	int N;
+	cout << "enter the number of elements" << endl;
+	cin >> N;
+	cout << "enter elements" << endl;
+
+	vector <int> A, C;
+	for (int i = 0; i < N; i++)
+	{
+		int x;
+		cin >> x;
+		A.push_back(x);
+	}
+	C = A;
+
+	for (int i = 0; i < N; i++) {
+		B[i] = A[i];
+	}
+
+	gnomeSort(C, N);
+	cout << "Gnome sort (vector)" << endl;
+	for (auto x : C) {   
+		cout << x << " ";
+	}
+	cout << endl;
+
+	gnomeSort(B, N);
+	cout << "Gnome sort (arr)" << endl;
+	for (int i = 0; i < N; i++) {
+		cout << B[i] << " ";
+	}
+	cout << endl;
+
+
+	C = A;
+	for (int i = 0; i < N; i++) {
+		B[i] = A[i];
+	}
+
+	pigeonholeSort(C, N);
+	cout << "Pigeonhole sort (vector)" << endl;
+	for (auto x : C) {
+		cout << x << " ";
+	}
+	cout << endl;
+
+	pigeonholeSort(B, N);
+	cout << "Pigeonhole sort (arr)" << endl;
+	for (int i = 0; i < N; i++) {
+		cout << B[i] << " ";
+	}
+	cout << endl;
 
 }
 
