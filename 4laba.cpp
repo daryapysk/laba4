@@ -163,6 +163,72 @@ void pigeonholeSort(T1& arr, T2 n)   //A function for sorting using pigeonhole a
 
 int main() 
 {
-  
+  int a[] = { 1, 5, 2, 7, 6, 3, 2, 9, 4, 8 };
+	string b[] = { "21", "15", "12", "37", "16", "23", "32", "49", "14", "18" };
+	vector<int> vector1 = { 1, 5, 7, 82, 3, 5, 7, 12 };
+	testClass arr_obj[] = { {9,6}, {7, 3}, {4, 5}, {6, 3}, {2, 1} };
+
+	сocktailSort(a, 10);
+	сocktailSort(b, 10);
+	сocktailSort(vector1, 8);
+	сocktailSort(arr_obj, 5);
+
+	cout << "Cocktail sort" << endl;
+
+	for (int i = 0; i < 10; i++) {
+		cout << a[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 10; i++) {
+		cout << b[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 8; i++) {
+		cout << vector1[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 5; i++) {
+		cout << arr_obj[i].x << " + " << arr_obj[i].y << ", ";
+	}
+	cout << endl;
+
+
+	int c[] = { 1, 5, 2, 7, 6, 3, 2, 9, 4, 8 };
+	string d[] = { "21", "15", "12", "37", "16", "23", "32", "49", "14", "18" };
+	vector<int> vector2 = { 1, 5, 7, 82, 3, 5, 7, 12 };
+	testClass arr_obj_2[] = { {9,6}, {7, 3}, {4, 5}, {6, 3}, {2, 1} };
+
+	selectionSort(c, 10);
+	selectionSort(d, 10);
+	selectionSort(vector2, 8);
+	selectionSort(arr_obj_2, 5);
+
+	cout << "Choise sort" << endl;
+
+	for (int i = 0; i < 10; i++) {
+		cout << c[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 10; i++) {
+		cout << d[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 8; i++) {
+		cout << vector2[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = 0; i < 5; i++) {
+		cout << arr_obj_2[i].x << " + " << arr_obj_2[i].y << ", ";
+	}
+	cout << endl;
+	
+	cout << "-------------------------------------" << endl;
+
 }
 
