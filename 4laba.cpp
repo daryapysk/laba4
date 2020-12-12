@@ -107,14 +107,14 @@ void сocktailSort(vector<T>& a, int n) {
 }
 
 template <typename T>
-void gnomeSort(T& arr, int n)  
+void gnomeSort(T& arr, int n)  // A function for sorting using gnome algorithm
 {
 	int index = 0;
 	while (index < n) {
-		if (index == 0) index++;
-		else if (arr[index] >= arr[index - 1]) index++;
+		if (index == 0) index++;  //If you are at the start of the array then go to the right element
+		else if (arr[index] >= arr[index - 1]) index++;  //If the current array element is larger or equal to the previous array element then go one step right
 		else {
-			swap(arr[index], arr[index - 1]);
+			swap(arr[index], arr[index - 1]);  //If the current array element is smaller than the previous array element then swap these two elements and go one step backwards
 			index--;
 		}
 	}
@@ -122,9 +122,9 @@ void gnomeSort(T& arr, int n)
 }
 
 template <typename T1, typename T2>
-void pigeonholeSort(T1& arr, T2 n)   
+void pigeonholeSort(T1& arr, T2 n)   //A function for sorting using pigeonhole algorithm 
 {
-	
+	// Find minimum and maximum values in arr[]
 	T2 min = arr[0], max = arr[0];
 	for (int i = 1; i < int(n); i++) {
 		if (min > arr[i])
@@ -132,10 +132,10 @@ void pigeonholeSort(T1& arr, T2 n)
 		if (max < arr[i])
 			max = arr[i];
 	}
-	T2 range = max - min;  
+	T2 range = max - min;  // Find range 
 	range++;
 
-	
+	// Create an array of vectors. Size of array range. Each vector represents a hole that is going to contain matching elements.
 	vector <vector<T2>> holes;
 	vector <T2> temp;
 	temp.clear();
@@ -143,11 +143,11 @@ void pigeonholeSort(T1& arr, T2 n)
 	for (T2 i = 0; i < range; i++) {
 		holes.push_back(temp);
 	}
-
+        // Traverse through input array and put every element in its respective hole ( arr[i] – min)
 	for (int i = 0; i < n; i++) {
 		holes[arr[i] - min].push_back(arr[i]);
 	}
-
+       // Traverse through all holes one by one. For every hole, take its elements and put in array
 	int index = 0;
 	for (T2 i = 0; i < range; i++) {
 		for (int j = 0; j < holes[i].size(); j++) {
